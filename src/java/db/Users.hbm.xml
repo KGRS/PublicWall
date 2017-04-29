@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 28, 2017 2:52:10 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="db.Users" table="users" catalog="publicwall" optimistic-lock="version">
+        <id name="idusers" type="java.lang.Integer">
+            <column name="idusers" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" not-null="true" />
+        </property>
+        <property name="birthday" type="date">
+            <column name="birthday" length="10" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="45" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="555" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="1005" not-null="true" />
+        </property>
+        <property name="photo" type="binary">
+            <column name="photo" />
+        </property>
+        <property name="state" type="java.lang.Byte">
+            <column name="state" />
+        </property>
+        <property name="refid" type="java.lang.Integer">
+            <column name="refid" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" />
+        </property>
+        <property name="score" type="int">
+            <column name="score" not-null="true" />
+        </property>
+        <property name="counrtyid" type="java.lang.Integer">
+            <column name="counrtyid" />
+        </property>
+        <set name="userroles" table="userrole" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idusers" not-null="true" />
+            </key>
+            <one-to-many class="db.Userrole" />
+        </set>
+        <set name="countrytables" table="countrytable" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="countryid" not-null="true" />
+            </key>
+            <one-to-many class="db.Countrytable" />
+        </set>
+        <set name="usersandposts" table="usersandpost" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userspost_idusers" not-null="true" />
+            </key>
+            <one-to-many class="db.Usersandpost" />
+        </set>
+        <set name="numberoflikeses" table="numberoflikes" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idusers" not-null="true" />
+            </key>
+            <one-to-many class="db.Numberoflikes" />
+        </set>
+    </class>
+</hibernate-mapping>

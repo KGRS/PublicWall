@@ -145,7 +145,7 @@
                                     <label><b><h4>Re Enter Password         </h4></b></label>
                                     <input type="text" placeholder="Re Enter Password" name="repassword" required></td>
                                     <label><b><h4>Berth Day         </h4></b></label>
-                                    <input type="text" placeholder="Enter Berth Day" name="berthday" required></td>									
+                                    <input type="text" placeholder="Enter Birthday" name="birthday" required></td>									
                                     <label><b><h4>Gender         </h4></b></label>
                                     <input type="text" placeholder="Enter Gender" name="gender" required></td>
                                     <label><b><h4>Email         </h4></b></label>

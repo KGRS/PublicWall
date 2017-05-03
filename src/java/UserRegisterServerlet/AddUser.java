@@ -46,21 +46,34 @@ public class AddUser extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
 
             String uname = request.getParameter("uname");
-            String pw = request.getParameter("uname");
-            String address1 = request.getParameter("uname");
-            String tp = request.getParameter("uname");
+            String password = request.getParameter("password");
+            String repassword = request.getParameter("repassword");
+            String birthday = request.getParameter("birthday");
+            String gender = request.getParameter("gender");
+            String email = request.getParameter("email");
+            String address = request.getParameter("address");
+            String country = request.getParameter("country");           
 
             //validate
             if (uname == null) {
+                response.sendRedirect("index.jsp");
+                return;
+            }else if(!password.equals(repassword)){
                 response.sendRedirect("index.jsp");
                 return;
             }
 
             Users u = new Users();
             u.setUsername(uname);
-
+            u.setPassword(password);
+//            u.setBirthday(birthday);
+            u.setGender(gender);
+            u.setEmail(email);
+            u.setAddress(address);
+            u.setCounrtyid(Integer.MIN_VALUE);           
             uf.InserttUser(u);
             response.sendRedirect("index.jsp");
+            
         } catch (Exception er) {
             er.printStackTrace();
         } finally {

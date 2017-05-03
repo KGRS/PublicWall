@@ -10,6 +10,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 /**
@@ -45,7 +46,13 @@ public class UsersFunctions {
         return (Users) cr.uniqueResult();        
     }
     
-    private void insertUser(){
-        
+    public void InserttUser(Users usr) throws Exception{
+        Session ses = sf.openSession();
+        Transaction tr = ses.beginTransaction();      
+        ses.save(usr);
+        tr.commit();
+        ses.flush();
     }
+    
+    
 }

@@ -156,15 +156,11 @@
                                    
                                     <select name="country">
                                         <option value="1"> Sri Lanka</option>
-                                        <option></option>
-                                        <option></option>
-                                        <option></option>
-                                        <option></option>
-                                        <option></option>
-                                        <option></option>
-                                        <option></option>
-                                        <option></option>
-                                        <option></option>
+                                        <option value="2"> Australier</option>
+                                        <option value="3"> Canada</option>
+                                        <option value="4"> USA</option>
+                                        <option value="5"> UK</option>
+                                        <option value="6"> Nethalands</option>                                        
                                     </select>
 
                                 </div>

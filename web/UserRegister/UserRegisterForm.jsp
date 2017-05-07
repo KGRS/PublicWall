@@ -153,8 +153,19 @@
                                     <label><b><h4>Address         </h4></b></label>
                                     <input type="text" placeholder="Enter Address" name="address" required></td>								
                                     <label><b><h4>Country         </h4></b></label>
-                                    <input type="text" placeholder="Enter Country" name="country" required></td>
-
+                                   
+                                    <select name="country">
+                                        <option value="1"> Sri Lanka</option>
+                                        <option></option>
+                                        <option></option>
+                                        <option></option>
+                                        <option></option>
+                                        <option></option>
+                                        <option></option>
+                                        <option></option>
+                                        <option></option>
+                                        <option></option>
+                                    </select>
 
                                 </div>
                         </div>

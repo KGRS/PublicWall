@@ -46,7 +46,7 @@ public class UsersFunctions {
         return (Users) cr.uniqueResult();        
     }
     
-    public void InserttUser(Users usr) throws Exception{
+    public void InsertUser(Users usr) throws Exception{
         Session ses = sf.openSession();
         Transaction tr = ses.beginTransaction();      
         ses.save(usr);

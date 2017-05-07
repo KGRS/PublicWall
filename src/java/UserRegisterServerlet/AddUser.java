@@ -9,6 +9,9 @@ import Model.UsersFunctions;
 import db.Users;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,23 +45,27 @@ public class AddUser extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        try {
-            /* TODO output your page here. You may use following sample code. */
+        try {            
 
             String uname = request.getParameter("uname");
             String password = request.getParameter("password");
             String repassword = request.getParameter("repassword");
             String birthday = request.getParameter("birthday");
+            
+            DateFormat df = new SimpleDateFormat("mm/dd/yyyy");
+            Date bdate = df.parse(birthday);
+            
             String gender = request.getParameter("gender");
             String email = request.getParameter("email");
             String address = request.getParameter("address");
-            String country = request.getParameter("country");           
-
+            String country = request.getParameter("country");
+            int countryNo = Integer.parseInt(country);
+            
             //validate
             if (uname == null) {
                 response.sendRedirect("index.jsp");
                 return;
-            }else if(!password.equals(repassword)){
+            } else if (!password.equals(repassword)) {
                 response.sendRedirect("index.jsp");
                 return;
             }
@@ -66,14 +73,14 @@ public class AddUser extends HttpServlet {
             Users u = new Users();
             u.setUsername(uname);
             u.setPassword(password);
-//            u.setBirthday(birthday);
+            u.setBirthday(bdate);
             u.setGender(gender);
             u.setEmail(email);
             u.setAddress(address);
-            u.setCounrtyid(Integer.MIN_VALUE);           
-            uf.InserttUser(u);
+            u.setCounrtyid(countryNo);
+            uf.InsertUser(u);
             response.sendRedirect("index.jsp");
-            
+
         } catch (Exception er) {
             er.printStackTrace();
         } finally {

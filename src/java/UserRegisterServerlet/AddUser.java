@@ -6,6 +6,7 @@
 package UserRegisterServerlet;
 
 import Model.UsersFunctions;
+import db.Gender;
 import db.Users;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -45,6 +46,7 @@ public class AddUser extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        System.out.println("calling servlet");
         try {            
 
             String uname = request.getParameter("uname");
@@ -52,14 +54,15 @@ public class AddUser extends HttpServlet {
             String repassword = request.getParameter("repassword");
             String birthday = request.getParameter("birthday");
             
-            DateFormat df = new SimpleDateFormat("mm/dd/yyyy");
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             Date bdate = df.parse(birthday);
             
-            String gender = request.getParameter("gender");
+            String Sgender = request.getParameter("gender");
             String email = request.getParameter("email");
             String address = request.getParameter("address");
             String country = request.getParameter("country");
             int countryNo = Integer.parseInt(country);
+            int genderNo = Integer.parseInt(Sgender);
             
             //validate
             if (uname == null) {
@@ -69,16 +72,15 @@ public class AddUser extends HttpServlet {
                 response.sendRedirect("index.jsp");
                 return;
             }
+             
 
             Users u = new Users();
             u.setUsername(uname);
             u.setPassword(password);
-            u.setBirthday(bdate);
-            u.setGender(gender);
+            u.setBirthday(bdate); 
             u.setEmail(email);
-            u.setAddress(address);
-            u.setCounrtyid(countryNo);
-            uf.InsertUser(u);
+            u.setAddress(address); 
+            uf.InsertUser(u,countryNo,genderNo);
             response.sendRedirect("index.jsp");
 
         } catch (Exception er) {

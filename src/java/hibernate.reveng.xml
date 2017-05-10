@@ -2,12 +2,13 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="publicwall"/>
-  <table-filter match-name="userrole"/>
-  <table-filter match-name="countrytable"/>
-  <table-filter match-name="postkeywords"/>
-  <table-filter match-name="usersandpost"/>
-  <table-filter match-name="post"/>
-  <table-filter match-name="numberoflikes"/>
   <table-filter match-name="role"/>
+  <table-filter match-name="gender"/>
+  <table-filter match-name="post"/>
+  <table-filter match-name="countrytable"/>
+  <table-filter match-name="usersandpost"/>
+  <table-filter match-name="postkeywords"/>
+  <table-filter match-name="numberoflikes"/>
   <table-filter match-name="users"/>
+  <table-filter match-name="userrole"/>
 </hibernate-reverse-engineering>

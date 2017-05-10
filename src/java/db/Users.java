@@ -1,5 +1,5 @@
 package db;
-// Generated Apr 28, 2017 2:52:06 PM by Hibernate Tools 4.3.1
+// Generated May 7, 2017 8:49:33 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -13,9 +13,10 @@ public class Users  implements java.io.Serializable {
 
 
      private Integer idusers;
+     private Countrytable countrytable;
+     private Gender gender;
      private String username;
      private Date birthday;
-     private String gender;
      private String address;
      private String email;
      private byte[] photo;
@@ -23,9 +24,7 @@ public class Users  implements java.io.Serializable {
      private Integer refid;
      private String password;
      private int score;
-     private Integer counrtyid;
      private Set userroles = new HashSet(0);
-     private Set countrytables = new HashSet(0);
      private Set usersandposts = new HashSet(0);
      private Set numberoflikeses = new HashSet(0);
 
@@ -33,18 +32,20 @@ public class Users  implements java.io.Serializable {
     }
 
 	
-    public Users(String username, Date birthday, String gender, String address, String email, int score) {
+    public Users(Countrytable countrytable, Gender gender, String username, Date birthday, String address, String email, int score) {
+        this.countrytable = countrytable;
+        this.gender = gender;
         this.username = username;
         this.birthday = birthday;
-        this.gender = gender;
         this.address = address;
         this.email = email;
         this.score = score;
     }
-    public Users(String username, Date birthday, String gender, String address, String email, byte[] photo, Byte state, Integer refid, String password, int score, Integer counrtyid, Set userroles, Set countrytables, Set usersandposts, Set numberoflikeses) {
+    public Users(Countrytable countrytable, Gender gender, String username, Date birthday, String address, String email, byte[] photo, Byte state, Integer refid, String password, int score, Set userroles, Set usersandposts, Set numberoflikeses) {
+       this.countrytable = countrytable;
+       this.gender = gender;
        this.username = username;
        this.birthday = birthday;
-       this.gender = gender;
        this.address = address;
        this.email = email;
        this.photo = photo;
@@ -52,9 +53,7 @@ public class Users  implements java.io.Serializable {
        this.refid = refid;
        this.password = password;
        this.score = score;
-       this.counrtyid = counrtyid;
        this.userroles = userroles;
-       this.countrytables = countrytables;
        this.usersandposts = usersandposts;
        this.numberoflikeses = numberoflikeses;
     }
@@ -65,6 +64,20 @@ public class Users  implements java.io.Serializable {
     
     public void setIdusers(Integer idusers) {
         this.idusers = idusers;
+    }
+    public Countrytable getCountrytable() {
+        return this.countrytable;
+    }
+    
+    public void setCountrytable(Countrytable countrytable) {
+        this.countrytable = countrytable;
+    }
+    public Gender getGender() {
+        return this.gender;
+    }
+    
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
     public String getUsername() {
         return this.username;
@@ -79,13 +92,6 @@ public class Users  implements java.io.Serializable {
     
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
-    }
-    public String getGender() {
-        return this.gender;
-    }
-    
-    public void setGender(String gender) {
-        this.gender = gender;
     }
     public String getAddress() {
         return this.address;
@@ -136,26 +142,12 @@ public class Users  implements java.io.Serializable {
     public void setScore(int score) {
         this.score = score;
     }
-    public Integer getCounrtyid() {
-        return this.counrtyid;
-    }
-    
-    public void setCounrtyid(Integer counrtyid) {
-        this.counrtyid = counrtyid;
-    }
     public Set getUserroles() {
         return this.userroles;
     }
     
     public void setUserroles(Set userroles) {
         this.userroles = userroles;
-    }
-    public Set getCountrytables() {
-        return this.countrytables;
-    }
-    
-    public void setCountrytables(Set countrytables) {
-        this.countrytables = countrytables;
     }
     public Set getUsersandposts() {
         return this.usersandposts;

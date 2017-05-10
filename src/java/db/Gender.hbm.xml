@@ -3,17 +3,17 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated May 7, 2017 8:49:34 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="db.Countrytable" table="countrytable" catalog="publicwall" optimistic-lock="version">
-        <id name="logid" type="java.lang.Integer">
-            <column name="logid" />
+    <class name="db.Gender" table="gender" catalog="publicwall" optimistic-lock="version">
+        <id name="idgender" type="java.lang.Integer">
+            <column name="idgender" />
             <generator class="identity" />
         </id>
-        <property name="countryname" type="string">
-            <column name="countryname" not-null="true" />
+        <property name="genderValue" type="string">
+            <column name="genderValue" length="45" />
         </property>
         <set name="userses" table="users" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="countrytable_logid" not-null="true" />
+                <column name="Gender_idGender" not-null="true" />
             </key>
             <one-to-many class="db.Users" />
         </set>

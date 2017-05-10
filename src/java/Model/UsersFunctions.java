@@ -5,6 +5,8 @@
  */
 package Model;
 
+import db.Countrytable;
+import db.Gender;
 import db.Users;
 import java.util.List;
 import org.hibernate.Criteria;
@@ -19,18 +21,18 @@ import org.hibernate.criterion.Restrictions;
  */
 public class UsersFunctions {
     
-    private final SessionFactory sf;
-    
+    private   SessionFactory sf;
+    Session ses;
     public UsersFunctions(){
         sf = conn.HibernateUtil.getSessionFactory();
+        ses = sf.openSession();
     }
     
     public static void main(String[] args) {
         new UsersFunctions().selectUsers();
     }
     
-    private List selectUsers(){
-        Session ses = sf.openSession();
+    private List selectUsers(){ 
         Criteria cr = ses.createCriteria(UsersFunctions.class);
         List<Users> u = cr.list();
 //        for (Users u1 : u) {
@@ -46,12 +48,18 @@ public class UsersFunctions {
         return (Users) cr.uniqueResult();        
     }
     
-    public void InsertUser(Users usr) throws Exception{
-        Session ses = sf.openSession();
+    public void InsertUser(Users usr) throws Exception{ 
         Transaction tr = ses.beginTransaction();      
         ses.save(usr);
         tr.commit();
-        ses.flush();
+    }
+
+    public void InsertUser(Users u, int countryNo, int genderNo) throws Exception { 
+        Countrytable cr = (Countrytable) ses.load(Countrytable.class, countryNo);
+        Gender gn = (Gender) ses.load(Gender.class, genderNo);
+        u.setCountrytable(cr);
+        u.setGender(gn);
+        InsertUser(u);
     }
     
     

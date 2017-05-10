@@ -141,13 +141,17 @@
                                     <label><b><h4>User Name         </h4></b></label>
                                     <input type="text" placeholder="Enter User Name" name="uname" required></td>
                                     <label><b><h4>Password         </h4></b></label>
-                                    <input type="text" placeholder="Enter Password" name="password" required></td>
+                                    <input type="password" placeholder="Enter Password" name="password" required></td>
                                     <label><b><h4>Re Enter Password         </h4></b></label>
-                                    <input type="text" placeholder="Re Enter Password" name="repassword" required></td>
-                                    <label><b><h4>Berth Day         </h4></b></label>
-                                    <input type="text" placeholder="Enter Birthday" name="birthday" required></td>									
-                                    <label><b><h4>Gender         </h4></b></label>
-                                    <input type="text" placeholder="Enter Gender" name="gender" required></td>
+                                    <input type="password" placeholder="Re Enter Password" name="repassword" required></td>
+                                    <label><b><h4>Birthday         </h4></b></label>
+                                    <input type="date" placeholder="Enter Birthday" name="birthday" required></td>									
+                                    <label><b><h4>Gender         </h4></b></label>  
+                                    <select name="gender">
+                                        <option value="1"> Male</option>
+                                        <option value="2"> Female</option>                                    
+                                    </select>    
+                                </td>
                                     <label><b><h4>Email         </h4></b></label>
                                     <input type="text" placeholder="Enter Email" name="email" required></td>								
                                     <label><b><h4>Address         </h4></b></label>
@@ -165,33 +169,33 @@
 
                                 </div>
                         </div>
-                        </form>
-                    </div>
-
-
-
-                    <div id="comment-form" class="comment-form">
+                        
+                          <div id="comment-form" class="comment-form">
 
                         <div id="respond">
 
-                            <form action="#" method="post" id="commentform">
-                                <td>    						</td>
+                                 <td>    						</td>
                                 <td><label><b><div class="container1" style="background-color:#ffff">
                                                 <button type="submit" >Submit</button>
                                             </div></b></label>
                                 </td>
                                 <td><label><b><div class="container1" style="background-color:#ffff">
-                                                <button type="submit" >Clear</button>
+                                                <button type="reset" >Clear</button>
                                             </div></b></label>
                                 </td>
                                 <td>    						</td>
 
 
-                                </table>
-                            </form>
+                                </table> 
                         </div><!-- #respond -->	
 
                     </div>
+                        </form>
+                    </div>
+
+
+
+                  
 
 
 

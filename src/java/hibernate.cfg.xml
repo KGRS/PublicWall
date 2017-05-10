@@ -7,6 +7,7 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/publicwall?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">4321</property>
+    <property name="hibernate.show_sql">true</property>
     <mapping resource="db/Countrytable.hbm.xml"/>
     <mapping resource="db/Usersandpost.hbm.xml"/>
     <mapping resource="db/Role.hbm.xml"/>
@@ -14,6 +15,7 @@
     <mapping resource="db/Post.hbm.xml"/>
     <mapping resource="db/Postkeywords.hbm.xml"/>
     <mapping resource="db/Userrole.hbm.xml"/>
+    <mapping resource="db/Gender.hbm.xml"/>
     <mapping resource="db/Users.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

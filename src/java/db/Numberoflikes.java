@@ -1,5 +1,5 @@
 package db;
-// Generated May 7, 2017 8:49:33 PM by Hibernate Tools 4.3.1
+// Generated May 11, 2017 9:09:59 PM by Hibernate Tools 3.6.0
 
 
 
@@ -10,7 +10,7 @@ public class Numberoflikes  implements java.io.Serializable {
 
 
      private Integer numberoflikesLogid;
-     private Post post;
+     private Posttable posttable;
      private Users users;
      private String remarks;
 
@@ -18,12 +18,12 @@ public class Numberoflikes  implements java.io.Serializable {
     }
 
 	
-    public Numberoflikes(Post post, Users users) {
-        this.post = post;
+    public Numberoflikes(Posttable posttable, Users users) {
+        this.posttable = posttable;
         this.users = users;
     }
-    public Numberoflikes(Post post, Users users, String remarks) {
-       this.post = post;
+    public Numberoflikes(Posttable posttable, Users users, String remarks) {
+       this.posttable = posttable;
        this.users = users;
        this.remarks = remarks;
     }
@@ -35,12 +35,12 @@ public class Numberoflikes  implements java.io.Serializable {
     public void setNumberoflikesLogid(Integer numberoflikesLogid) {
         this.numberoflikesLogid = numberoflikesLogid;
     }
-    public Post getPost() {
-        return this.post;
+    public Posttable getPosttable() {
+        return this.posttable;
     }
     
-    public void setPost(Post post) {
-        this.post = post;
+    public void setPosttable(Posttable posttable) {
+        this.posttable = posttable;
     }
     public Users getUsers() {
         return this.users;

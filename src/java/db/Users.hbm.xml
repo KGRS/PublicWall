@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated May 7, 2017 8:49:34 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated May 11, 2017 9:10:00 PM by Hibernate Tools 3.6.0 -->
 <hibernate-mapping>
-    <class name="db.Users" table="users" catalog="publicwall" optimistic-lock="version">
+    <class name="db.Users" table="users" catalog="publicwall">
         <id name="idusers" type="java.lang.Integer">
             <column name="idusers" />
             <generator class="identity" />
@@ -12,7 +12,7 @@
             <column name="countrytable_logid" not-null="true" />
         </many-to-one>
         <many-to-one name="gender" class="db.Gender" fetch="select">
-            <column name="Gender_idGender" not-null="true" />
+            <column name="gender_idgender" not-null="true" />
         </many-to-one>
         <property name="username" type="string">
             <column name="username" not-null="true" />
@@ -52,6 +52,12 @@
                 <column name="userspost_idusers" not-null="true" />
             </key>
             <one-to-many class="db.Usersandpost" />
+        </set>
+        <set name="posttables" table="posttable" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Postedby" not-null="true" />
+            </key>
+            <one-to-many class="db.Posttable" />
         </set>
         <set name="numberoflikeses" table="numberoflikes" inverse="true" lazy="true" fetch="select">
             <key>

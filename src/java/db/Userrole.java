@@ -1,5 +1,5 @@
 package db;
-// Generated May 7, 2017 8:49:33 PM by Hibernate Tools 4.3.1
+// Generated May 11, 2017 9:09:59 PM by Hibernate Tools 3.6.0
 
 
 
@@ -10,15 +10,15 @@ public class Userrole  implements java.io.Serializable {
 
 
      private Integer logid;
-     private Role role;
      private Users users;
+     private Role role;
 
     public Userrole() {
     }
 
-    public Userrole(Role role, Users users) {
-       this.role = role;
+    public Userrole(Users users, Role role) {
        this.users = users;
+       this.role = role;
     }
    
     public Integer getLogid() {
@@ -28,19 +28,19 @@ public class Userrole  implements java.io.Serializable {
     public void setLogid(Integer logid) {
         this.logid = logid;
     }
-    public Role getRole() {
-        return this.role;
-    }
-    
-    public void setRole(Role role) {
-        this.role = role;
-    }
     public Users getUsers() {
         return this.users;
     }
     
     public void setUsers(Users users) {
         this.users = users;
+    }
+    public Role getRole() {
+        return this.role;
+    }
+    
+    public void setRole(Role role) {
+        this.role = role;
     }
 
 

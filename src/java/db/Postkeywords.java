@@ -1,5 +1,5 @@
 package db;
-// Generated May 7, 2017 8:49:33 PM by Hibernate Tools 4.3.1
+// Generated May 11, 2017 9:09:59 PM by Hibernate Tools 3.6.0
 
 
 
@@ -10,14 +10,14 @@ public class Postkeywords  implements java.io.Serializable {
 
 
      private Integer logid;
-     private Post post;
+     private Posttable posttable;
      private String postkeywords;
 
     public Postkeywords() {
     }
 
-    public Postkeywords(Post post, String postkeywords) {
-       this.post = post;
+    public Postkeywords(Posttable posttable, String postkeywords) {
+       this.posttable = posttable;
        this.postkeywords = postkeywords;
     }
    
@@ -28,12 +28,12 @@ public class Postkeywords  implements java.io.Serializable {
     public void setLogid(Integer logid) {
         this.logid = logid;
     }
-    public Post getPost() {
-        return this.post;
+    public Posttable getPosttable() {
+        return this.posttable;
     }
     
-    public void setPost(Post post) {
-        this.post = post;
+    public void setPosttable(Posttable posttable) {
+        this.posttable = posttable;
     }
     public String getPostkeywords() {
         return this.postkeywords;

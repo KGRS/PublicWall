@@ -5,7 +5,7 @@
  */
 package Model;
 
-import db.Post;
+import db.Posttable;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -29,11 +29,11 @@ public class PostFunctions {
     private List selectPost(){
         Session ses = sf.openSession();
         Criteria cr = ses.createCriteria(PostFunctions.class);
-        List<Post> p = cr.list();
+        List<Posttable> p = cr.list();
         return p;
     }
     
-    public void InsertPost(Post pos) throws Exception{ 
+    public void InsertPost(Posttable pos) throws Exception{ 
         Transaction tr = ses.beginTransaction();      
         ses.save(pos);
         tr.commit();

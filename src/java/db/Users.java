@@ -1,5 +1,5 @@
 package db;
-// Generated May 7, 2017 8:49:33 PM by Hibernate Tools 4.3.1
+// Generated May 11, 2017 9:09:59 PM by Hibernate Tools 3.6.0
 
 
 import java.util.Date;
@@ -26,6 +26,7 @@ public class Users  implements java.io.Serializable {
      private int score;
      private Set userroles = new HashSet(0);
      private Set usersandposts = new HashSet(0);
+     private Set posttables = new HashSet(0);
      private Set numberoflikeses = new HashSet(0);
 
     public Users() {
@@ -41,7 +42,7 @@ public class Users  implements java.io.Serializable {
         this.email = email;
         this.score = score;
     }
-    public Users(Countrytable countrytable, Gender gender, String username, Date birthday, String address, String email, byte[] photo, Byte state, Integer refid, String password, int score, Set userroles, Set usersandposts, Set numberoflikeses) {
+    public Users(Countrytable countrytable, Gender gender, String username, Date birthday, String address, String email, byte[] photo, Byte state, Integer refid, String password, int score, Set userroles, Set usersandposts, Set posttables, Set numberoflikeses) {
        this.countrytable = countrytable;
        this.gender = gender;
        this.username = username;
@@ -55,6 +56,7 @@ public class Users  implements java.io.Serializable {
        this.score = score;
        this.userroles = userroles;
        this.usersandposts = usersandposts;
+       this.posttables = posttables;
        this.numberoflikeses = numberoflikeses;
     }
    
@@ -155,6 +157,13 @@ public class Users  implements java.io.Serializable {
     
     public void setUsersandposts(Set usersandposts) {
         this.usersandposts = usersandposts;
+    }
+    public Set getPosttables() {
+        return this.posttables;
+    }
+    
+    public void setPosttables(Set posttables) {
+        this.posttables = posttables;
     }
     public Set getNumberoflikeses() {
         return this.numberoflikeses;

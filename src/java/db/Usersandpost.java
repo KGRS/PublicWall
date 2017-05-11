@@ -1,5 +1,5 @@
 package db;
-// Generated May 7, 2017 8:49:33 PM by Hibernate Tools 4.3.1
+// Generated May 11, 2017 9:09:59 PM by Hibernate Tools 3.6.0
 
 
 
@@ -10,7 +10,7 @@ public class Usersandpost  implements java.io.Serializable {
 
 
      private int userspostLogid;
-     private Post post;
+     private Posttable posttable;
      private Users users;
      private String comment;
      private Integer isactive;
@@ -19,15 +19,15 @@ public class Usersandpost  implements java.io.Serializable {
     }
 
 	
-    public Usersandpost(int userspostLogid, Post post, Users users, String comment) {
+    public Usersandpost(int userspostLogid, Posttable posttable, Users users, String comment) {
         this.userspostLogid = userspostLogid;
-        this.post = post;
+        this.posttable = posttable;
         this.users = users;
         this.comment = comment;
     }
-    public Usersandpost(int userspostLogid, Post post, Users users, String comment, Integer isactive) {
+    public Usersandpost(int userspostLogid, Posttable posttable, Users users, String comment, Integer isactive) {
        this.userspostLogid = userspostLogid;
-       this.post = post;
+       this.posttable = posttable;
        this.users = users;
        this.comment = comment;
        this.isactive = isactive;
@@ -40,12 +40,12 @@ public class Usersandpost  implements java.io.Serializable {
     public void setUserspostLogid(int userspostLogid) {
         this.userspostLogid = userspostLogid;
     }
-    public Post getPost() {
-        return this.post;
+    public Posttable getPosttable() {
+        return this.posttable;
     }
     
-    public void setPost(Post post) {
-        this.post = post;
+    public void setPosttable(Posttable posttable) {
+        this.posttable = posttable;
     }
     public Users getUsers() {
         return this.users;

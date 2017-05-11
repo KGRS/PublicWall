@@ -1,13 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated May 7, 2017 8:49:34 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated May 11, 2017 9:10:00 PM by Hibernate Tools 3.6.0 -->
 <hibernate-mapping>
-    <class name="db.Post" table="post" catalog="publicwall" optimistic-lock="version">
+    <class name="db.Posttable" table="posttable" catalog="publicwall">
         <id name="postid" type="java.lang.Integer">
             <column name="postid" />
             <generator class="identity" />
         </id>
+        <many-to-one name="users" class="db.Users" fetch="select">
+            <column name="Postedby" not-null="true" />
+        </many-to-one>
         <property name="content" type="string">
             <column name="content" length="4500" not-null="true" />
         </property>
@@ -19,6 +22,12 @@
         </property>
         <property name="posttype" type="byte">
             <column name="posttype" not-null="true" />
+        </property>
+        <property name="subject" type="string">
+            <column name="subject" not-null="true" />
+        </property>
+        <property name="idofuser" type="int">
+            <column name="idofuser" not-null="true" />
         </property>
         <set name="numberoflikeses" table="numberoflikes" inverse="true" lazy="true" fetch="select">
             <key>

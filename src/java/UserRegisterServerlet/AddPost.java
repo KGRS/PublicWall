@@ -6,7 +6,7 @@
 package UserRegisterServerlet;
 
 import Model.PostFunctions;
-import db.Post;
+import db.Posttable;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DateFormat;
@@ -49,7 +49,7 @@ public class AddPost extends HttpServlet {
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             Date date = new Date(System.currentTimeMillis());
 
-            Post po = new Post();
+            Posttable po = new Posttable();
             po.setContent(comment);
             po.setPostdatetime(date);
             pf.InsertPost(po);

@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated May 7, 2017 8:49:34 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated May 11, 2017 9:10:00 PM by Hibernate Tools 3.6.0 -->
 <hibernate-mapping>
-    <class name="db.Numberoflikes" table="numberoflikes" catalog="publicwall" optimistic-lock="version">
+    <class name="db.Numberoflikes" table="numberoflikes" catalog="publicwall">
         <id name="numberoflikesLogid" type="java.lang.Integer">
             <column name="numberoflikes_logid" />
             <generator class="identity" />
         </id>
-        <many-to-one name="post" class="db.Post" fetch="select">
+        <many-to-one name="posttable" class="db.Posttable" fetch="select">
             <column name="postid" not-null="true" />
         </many-to-one>
         <many-to-one name="users" class="db.Users" fetch="select">

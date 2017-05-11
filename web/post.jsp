@@ -202,7 +202,7 @@
                         <div id="respond">
                             <!--	<h3 id="reply-title">Leave a Reply</h3> -->
 
-                            <form action="#" method="post" id="commentform">							
+                            <form action="AddPost" method="POST" id="commentform">							
                                 <p class="comment-form-comment">
                                     <label for="comment">Comment</label>
                                     <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>

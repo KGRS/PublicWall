@@ -250,7 +250,7 @@
                             <th><h2 class="title">        </h2></th>
                         <th>			 		<div class="nav navbar-nav">
 
-                            <button onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Post</button>
+                            <button onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Click to add new post</button>
 
                         </div>
                         <div id="id01" class="modal">
@@ -262,15 +262,13 @@
                                 </div>
                                 <table style="width:100%">
                                     <tr><td>    						</td>
-                                        <th><label><font color="#424242"><b>Post Tittle</b></label></th>
-                                        <th><div id="editor"><input type="text" placeholder="Enter Username" name="uname" required></div></th>
-
+                                        <th><label><font color="#424242"><b>Post Subject</b></label></th>
+                                        <th><div id="editor"><input type="text" placeholder="Type your subject" name="subject" required></div></th>
 
                                     </tr>	
                                     <tr><td>    						</td>
                                         <th><label><font color="#424242"><b>Your Feed</b></label></th>
-                                        <th><input type="password" placeholder="Enter Password" name="psw" required></th>
-
+                                        <th><input type="text" placeholder="Type your feed" name="feed" required></th>
 
 
                                     </tr>

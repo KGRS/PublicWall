@@ -13,6 +13,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author KGRS
  */
+@WebServlet(name = "AddPost", urlPatterns = {"/AddPost"})
 public class AddPost extends HttpServlet {
 
     private PostFunctions pf;
@@ -45,15 +47,17 @@ public class AddPost extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         try {
-            String comment = request.getParameter("comment");
-            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            String subject = request.getParameter("subject");
+            String comment = request.getParameter("feed");
+//            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             Date date = new Date(System.currentTimeMillis());
 
             Posttable po = new Posttable();
+            po.setSubject(subject);
             po.setContent(comment);
             po.setPostdatetime(date);
             pf.InsertPost(po);
- 
+
         } catch (Exception er) {
             er.printStackTrace();
         } finally {

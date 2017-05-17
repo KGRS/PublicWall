@@ -6,6 +6,7 @@
 package Model;
 
 import db.Posttable;
+import db.Users;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -46,6 +47,12 @@ public class PostFunctions {
 //        u.setGender(gn);
 //        InsertUser(u);
 //    }
+//https://grails.org/
+    public void InsertPost(Posttable po, int uid) throws Exception {
+        Users us = (Users) ses.load(Users.class,uid);
+        po.setUsers(us);
+     InsertPost(po); 
+    }
     
     
 }

@@ -49,6 +49,7 @@ public class AddPost extends HttpServlet {
         try {
             String subject = request.getParameter("subject");
             String comment = request.getParameter("feed");
+            int uid = 1;
 //            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             Date date = new Date(System.currentTimeMillis());
 
@@ -56,7 +57,7 @@ public class AddPost extends HttpServlet {
             po.setSubject(subject);
             po.setContent(comment);
             po.setPostdatetime(date);
-            pf.InsertPost(po);
+            pf.InsertPost(po,uid);
 
         } catch (Exception er) {
             er.printStackTrace();
